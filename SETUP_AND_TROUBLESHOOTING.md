@@ -1,6 +1,6 @@
 more el notes - 
  - conda was the only thing that worked for me when running this; if you guys are using a different system then you'll have to rework some of the command line stuff
-  - apart from training, step 01 took the longest. unless you really want to try a different set of data **you can just skip to the training step and work only with the neural network** and not the bullshit before it. i don't think the data/data parsing will help improve the accuracy but its up to you
+  - apart from training, step 01 took the longest. unless you really want to try a different set of data **you can just skip to the training step and work only with the neural network** and not the bullshit before it. the parsed data is already stored. i don't think the data/data parsing will help improve the accuracy but its up to you
    - there are two models in this code that we can run: there's the ESM-2 35M, which has 35M parameters, and the ESM-2 650M, which has 650 parameters. that's really the only difference, the 650M has way more layers and is **better at gauging long-term relationships.** presumably the 650M will work better but i'm not about to run all that on my CPU lmao. so ideally we run that one but if it's too big that's fine. for our task it only adds a few percentage points of accuracy (allegedly)
  - if the troubleshooting guide that claude made is not helping lmk i can probably help with the package/dependency stuff
 
