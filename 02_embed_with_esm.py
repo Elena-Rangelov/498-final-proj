@@ -11,6 +11,13 @@ Requires:
   pip install torch fair-esm
 """
 
+# IMPORTANT: This must be set BEFORE importing torch.
+# Conda on Windows often ships multiple OpenMP runtimes (one in numpy/MKL,
+# one in torch). They conflict at import time. This env var tells OpenMP
+# to allow duplicate runtimes — safe for transformer inference.
+import os
+os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
+
 import argparse
 import csv
 from pathlib import Path
@@ -46,24 +53,27 @@ def main():
     last_layer = model.num_layers
     print(f"Using representations from layer {last_layer}.")
 
-    # Read all (id, seq, ss3) rows
+    # Read all (id, seq, ss3) rows. Use "pdb_chain" as the unique key so that
+    # different chains of the same PDB don't collide on disk.
     rows = []
     with open(args.labels_tsv) as f:
         reader = csv.DictReader(f, delimiter="\t")
         for r in reader:
-            rows.append((r["pdb_id"], r["sequence"], r["ss3"]))
+            chain = r.get("chain", "") or ""
+            uid = f"{r['pdb_id']}_{chain}" if chain else r["pdb_id"]
+            rows.append((uid, r["sequence"], r["ss3"]))
     print(f"Embedding {len(rows)} sequences...")
 
     # Process one at a time to keep memory predictable.
     # ESM-2 650M on a single sequence of length ~1000 fits easily in 16GB.
     with torch.no_grad():
-        for i, (pdb_id, seq, ss3) in enumerate(rows, 1):
+        for i, (uid, seq, ss3) in enumerate(rows, 1):
             # Truncate if needed (trim BOTH seq and label so they stay aligned)
             if len(seq) > args.max_len:
                 seq = seq[: args.max_len]
                 ss3 = ss3[: args.max_len]
 
-            data = [(pdb_id, seq)]
+            data = [(uid, seq)]
             _, _, tokens = batch_converter(data)
             tokens = tokens.to(args.device)
 
@@ -72,18 +82,18 @@ def main():
             reps = out["representations"][last_layer][0, 1 : len(seq) + 1].cpu()
 
             assert reps.shape[0] == len(seq) == len(ss3), (
-                f"length mismatch on {pdb_id}: emb={reps.shape[0]}, "
+                f"length mismatch on {uid}: emb={reps.shape[0]}, "
                 f"seq={len(seq)}, ss3={len(ss3)}"
             )
 
             torch.save(
-                {"pdb_id": pdb_id, "sequence": seq, "ss3": ss3,
+                {"uid": uid, "sequence": seq, "ss3": ss3,
                  "embedding": reps.half()},  # save as fp16 to halve disk usage
-                out_dir / f"{pdb_id}.pt",
+                out_dir / f"{uid}.pt",
             )
 
             if i % 20 == 0:
-                print(f"  [{i}/{len(rows)}] cached {pdb_id} (L={len(seq)})")
+                print(f"  [{i}/{len(rows)}] cached {uid} (L={len(seq)})")
 
     print(f"\nDone. Embeddings saved to {out_dir}")
 

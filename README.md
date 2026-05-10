@@ -1,3 +1,11 @@
+
+# el notes
+ - check the setup_and_troubleshooting doc to run
+ - model rationale doc and image.png include the structure of the model and why
+ - el_output.txt shows my output with the smaller model. it's honestly not bad and does a good job at continuing to climb without overfitting. bigger model would be better + could tweak the hyperparameters
+
+
+
 # Protein Secondary Structure Prediction
 
 Per-residue 3-class secondary structure prediction (H = α-helix, E = β-strand,

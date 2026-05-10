@@ -1,0 +1,42 @@
+python 05_train.py --epochs 30 --esm_dim 480 --num_workers 0
+Device: cpu
+Splits: train=210, val=28, test=42
+Trainable params: 1,703,427
+Epoch   1 | train_loss=0.9957 | val_q3=0.6233 | H=0.633 E=0.833 C=0.479
+Epoch   2 | train_loss=0.6965 | val_q3=0.7681 | H=0.844 E=0.707 C=0.715
+Epoch   3 | train_loss=0.5907 | val_q3=0.7880 | H=0.840 E=0.714 C=0.772
+Epoch   4 | train_loss=0.5477 | val_q3=0.7892 | H=0.854 E=0.668 C=0.787
+Epoch   5 | train_loss=0.5265 | val_q3=0.7907 | H=0.824 E=0.764 C=0.768
+Epoch   6 | train_loss=0.5195 | val_q3=0.7853 | H=0.892 E=0.674 C=0.727
+Epoch   7 | train_loss=0.5114 | val_q3=0.8001 | H=0.858 E=0.755 C=0.758
+Epoch   8 | train_loss=0.4921 | val_q3=0.7947 | H=0.881 E=0.670 C=0.770
+Epoch   9 | train_loss=0.4777 | val_q3=0.8048 | H=0.843 E=0.716 C=0.815
+Epoch  10 | train_loss=0.4703 | val_q3=0.7959 | H=0.882 E=0.731 C=0.733
+Epoch  11 | train_loss=0.4438 | val_q3=0.8035 | H=0.839 E=0.716 C=0.816
+Epoch  12 | train_loss=0.4433 | val_q3=0.8082 | H=0.863 E=0.743 C=0.783
+Epoch  13 | train_loss=0.4264 | val_q3=0.8127 | H=0.873 E=0.716 C=0.801
+Epoch  14 | train_loss=0.4122 | val_q3=0.8209 | H=0.894 E=0.770 C=0.765
+Epoch  15 | train_loss=0.4056 | val_q3=0.8085 | H=0.842 E=0.739 C=0.812
+Epoch  16 | train_loss=0.3885 | val_q3=0.8229 | H=0.897 E=0.768 C=0.768
+Epoch  17 | train_loss=0.3770 | val_q3=0.8182 | H=0.898 E=0.675 C=0.813
+Epoch  18 | train_loss=0.3644 | val_q3=0.8214 | H=0.880 E=0.699 C=0.828
+Epoch  19 | train_loss=0.3392 | val_q3=0.8256 | H=0.892 E=0.734 C=0.804
+Epoch  20 | train_loss=0.3341 | val_q3=0.8308 | H=0.892 E=0.722 C=0.826
+Epoch  21 | train_loss=0.3319 | val_q3=0.8310 | H=0.894 E=0.747 C=0.808
+Epoch  22 | train_loss=0.3233 | val_q3=0.8373 | H=0.891 E=0.752 C=0.827
+Epoch  23 | train_loss=0.3167 | val_q3=0.8353 | H=0.906 E=0.737 C=0.812
+Epoch  24 | train_loss=0.3089 | val_q3=0.8405 | H=0.918 E=0.780 C=0.786
+Epoch  25 | train_loss=0.3068 | val_q3=0.8425 | H=0.918 E=0.777 C=0.793
+Epoch  26 | train_loss=0.2974 | val_q3=0.8405 | H=0.919 E=0.770 C=0.791
+Epoch  27 | train_loss=0.3010 | val_q3=0.8415 | H=0.924 E=0.773 C=0.785
+Epoch  28 | train_loss=0.2964 | val_q3=0.8419 | H=0.916 E=0.763 C=0.802
+Epoch  29 | train_loss=0.2912 | val_q3=0.8427 | H=0.920 E=0.765 C=0.799
+Epoch  30 | train_loss=0.2976 | val_q3=0.8430 | H=0.919 E=0.765 C=0.800
+
+Best val Q3: 0.8430. Loading best checkpoint for test eval...
+
+Test Q3 = 0.8333
+  H: precision=0.914  recall=0.879
+  E: precision=0.770  recall=0.762
+  C: precision=0.779  recall=0.819
+  Confusion (rows=true, cols=pred): [[3978, 95, 455], [54, 1596, 444], [319, 382, 3169]]

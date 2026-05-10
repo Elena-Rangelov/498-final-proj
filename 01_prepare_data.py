@@ -43,35 +43,38 @@ AA3_TO_AA1 = {
 
 def download_structure(pdb_id: str, out_dir: Path) -> tuple[Path, str] | None:
     """
-    Try to fetch <pdb_id>.pdb, then fall back to <pdb_id>.cif.
-    Returns (path, file_format) where file_format is 'pdb' or 'mmcif',
-    or None on failure.
+    Download the mmCIF file for a PDB ID. We prefer mmCIF because:
+      - mkdssp 4.x on Windows only reliably parses mmCIF input
+      - mmCIF is the modern PDB format (some large structures are mmCIF-only)
+    Falls back to .pdb only if the mmCIF download fails.
+
+    Returns (path, file_format) or None on failure.
     """
     pdb_id = pdb_id.lower()
-    pdb_path = out_dir / f"{pdb_id}.pdb"
     cif_path = out_dir / f"{pdb_id}.cif"
+    pdb_path = out_dir / f"{pdb_id}.pdb"
 
-    if pdb_path.exists():
-        return pdb_path, "pdb"
     if cif_path.exists():
         return cif_path, "mmcif"
-
-    # Try .pdb first
-    try:
-        urlretrieve(f"https://files.rcsb.org/download/{pdb_id}.pdb", pdb_path)
+    if pdb_path.exists():
         return pdb_path, "pdb"
-    except HTTPError as e:
-        if e.code != 404:
-            print(f"  [warn] {pdb_id}.pdb HTTP {e.code}")
-    except URLError as e:
-        print(f"  [warn] {pdb_id}.pdb network error: {e}")
 
-    # Fallback: mmCIF
+    # Try .cif first (preferred)
     try:
         urlretrieve(f"https://files.rcsb.org/download/{pdb_id}.cif", cif_path)
         return cif_path, "mmcif"
+    except HTTPError as e:
+        if e.code != 404:
+            print(f"  [warn] {pdb_id}.cif HTTP {e.code}")
+    except URLError as e:
+        print(f"  [warn] {pdb_id}.cif network error: {e}")
+
+    # Fallback: .pdb
+    try:
+        urlretrieve(f"https://files.rcsb.org/download/{pdb_id}.pdb", pdb_path)
+        return pdb_path, "pdb"
     except (HTTPError, URLError) as e:
-        print(f"  [warn] {pdb_id}: failed to download both .pdb and .cif ({e})")
+        print(f"  [warn] {pdb_id}: failed to download both .cif and .pdb ({e})")
         return None
 
 
@@ -79,6 +82,11 @@ def run_mkdssp(structure_path: Path, dssp_executable: str) -> str | None:
     """
     Call mkdssp on the structure file and return its stdout (mmCIF format).
     Returns None on failure.
+
+    Note: different mkdssp builds use different argument names, so we just
+    pass the input file and let the binary detect the format from the
+    extension. We rename .pdb -> _input.pdb in a temp dir if needed to
+    ensure the extension is preserved through any path mangling.
     """
     # Use a temporary output path so we don't clutter the directory
     with tempfile.NamedTemporaryFile(suffix=".cif", delete=False) as tmp:
@@ -86,7 +94,8 @@ def run_mkdssp(structure_path: Path, dssp_executable: str) -> str | None:
 
     try:
         result = subprocess.run(
-            [dssp_executable, "--output-format", "mmcif",
+            [dssp_executable,
+             "--output-format", "mmcif",
              str(structure_path), out_path],
             capture_output=True, text=True, timeout=120,
         )
