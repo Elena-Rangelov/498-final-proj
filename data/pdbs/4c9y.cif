@@ -9,7 +9,7 @@ _audit_conform.dict_location   http://mmcif.pdb.org/dictionaries/ascii/mmcif_pdb
 loop_
 _database_2.database_id 
 _database_2.database_code 
-_database_2.pdbx_database_accession 
+_database_2.pdbx_databas    e_accession 
 _database_2.pdbx_DOI 
 PDB   4C9Y         pdb_00004c9y 10.2210/pdb4c9y/pdb 
 PDBE  EBI-58632    ?            ?                   
