@@ -1,0 +1,196 @@
+/home/ben/.local/lib/python3.12/site-packages/torch/nn/modules/transformer.py:531: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. We recommend specifying layout=torch.jagged when constructing a nested tensor, as this layout receives active development, has better operator coverage, and works with torch.compile. (Triggered internally at /pytorch/aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(
+Device: cuda
+Mode: 5-fold cross-validation
+Trainable params: 1,703,427
+CV setup: 5 folds | test=42 | cv_pool=238 per fold total
+
+============================================================
+  Fold 1/5  train=190  val=48
+============================================================
+[fold 1/5] Epoch   1 | train_loss=1.0409 | val_q3=0.5551 | H=0.892 E=0.025 C=0.512
+[fold 1/5] Epoch   2 | train_loss=0.7302 | val_q3=0.7282 | H=0.860 E=0.661 C=0.631
+[fold 1/5] Epoch   3 | train_loss=0.5925 | val_q3=0.7612 | H=0.779 E=0.716 C=0.769
+[fold 1/5] Epoch   4 | train_loss=0.5541 | val_q3=0.7559 | H=0.868 E=0.658 C=0.697
+[fold 1/5] Epoch   5 | train_loss=0.5243 | val_q3=0.7716 | H=0.795 E=0.676 C=0.803
+[fold 1/5] Epoch   6 | train_loss=0.5098 | val_q3=0.7787 | H=0.820 E=0.662 C=0.804
+[fold 1/5] Epoch   7 | train_loss=0.4986 | val_q3=0.7707 | H=0.809 E=0.720 C=0.761
+[fold 1/5] Epoch   8 | train_loss=0.4837 | val_q3=0.7776 | H=0.842 E=0.713 C=0.749
+[fold 1/5] Epoch   9 | train_loss=0.4740 | val_q3=0.7788 | H=0.841 E=0.679 C=0.772
+[fold 1/5] Epoch  10 | train_loss=0.4671 | val_q3=0.7729 | H=0.858 E=0.721 C=0.715
+[fold 1/5] Epoch  11 | train_loss=0.4574 | val_q3=0.7806 | H=0.843 E=0.714 C=0.754
+[fold 1/5] Epoch  12 | train_loss=0.4424 | val_q3=0.7882 | H=0.802 E=0.668 C=0.843
+[fold 1/5] Epoch  13 | train_loss=0.4319 | val_q3=0.7892 | H=0.838 E=0.665 C=0.810
+[fold 1/5] Epoch  14 | train_loss=0.4179 | val_q3=0.7923 | H=0.829 E=0.707 C=0.803
+[fold 1/5] Epoch  15 | train_loss=0.4026 | val_q3=0.7886 | H=0.855 E=0.736 C=0.750
+[fold 1/5] Epoch  16 | train_loss=0.3904 | val_q3=0.7966 | H=0.822 E=0.747 C=0.799
+[fold 1/5] Epoch  17 | train_loss=0.3788 | val_q3=0.7973 | H=0.863 E=0.745 C=0.759
+[fold 1/5] Epoch  18 | train_loss=0.3649 | val_q3=0.7997 | H=0.852 E=0.695 C=0.806
+[fold 1/5] Epoch  19 | train_loss=0.3579 | val_q3=0.8051 | H=0.848 E=0.710 C=0.815
+[fold 1/5] Epoch  20 | train_loss=0.3445 | val_q3=0.8051 | H=0.863 E=0.741 C=0.783
+[fold 1/5] Epoch  21 | train_loss=0.3384 | val_q3=0.8094 | H=0.854 E=0.739 C=0.804
+[fold 1/5] Epoch  22 | train_loss=0.3261 | val_q3=0.8126 | H=0.853 E=0.739 C=0.813
+[fold 1/5] Epoch  23 | train_loss=0.3212 | val_q3=0.8146 | H=0.859 E=0.747 C=0.807
+[fold 1/5] Epoch  24 | train_loss=0.3153 | val_q3=0.8137 | H=0.859 E=0.746 C=0.806
+[fold 1/5] Epoch  25 | train_loss=0.3080 | val_q3=0.8154 | H=0.867 E=0.745 C=0.803
+[fold 1/5] Epoch  26 | train_loss=0.3049 | val_q3=0.8156 | H=0.866 E=0.749 C=0.802
+[fold 1/5] Epoch  27 | train_loss=0.3056 | val_q3=0.8158 | H=0.869 E=0.752 C=0.797
+[fold 1/5] Epoch  28 | train_loss=0.3029 | val_q3=0.8172 | H=0.864 E=0.747 C=0.810
+[fold 1/5] Epoch  29 | train_loss=0.2999 | val_q3=0.8172 | H=0.867 E=0.749 C=0.805
+[fold 1/5] Epoch  30 | train_loss=0.3079 | val_q3=0.8167 | H=0.865 E=0.748 C=0.807
+
+  → Fold 1 best val Q3 = 0.8172  |  test Q3 = 0.8038
+
+============================================================
+  Fold 2/5  train=190  val=48
+============================================================
+[fold 2/5] Epoch   1 | train_loss=1.0335 | val_q3=0.5619 | H=0.926 E=0.100 C=0.488
+[fold 2/5] Epoch   2 | train_loss=0.7330 | val_q3=0.7370 | H=0.854 E=0.638 C=0.681
+[fold 2/5] Epoch   3 | train_loss=0.6029 | val_q3=0.7635 | H=0.858 E=0.607 C=0.767
+[fold 2/5] Epoch   4 | train_loss=0.5526 | val_q3=0.7804 | H=0.834 E=0.695 C=0.780
+[fold 2/5] Epoch   5 | train_loss=0.5344 | val_q3=0.7780 | H=0.798 E=0.682 C=0.820
+[fold 2/5] Epoch   6 | train_loss=0.5157 | val_q3=0.7790 | H=0.816 E=0.650 C=0.824
+[fold 2/5] Epoch   7 | train_loss=0.5037 | val_q3=0.7785 | H=0.811 E=0.642 C=0.833
+[fold 2/5] Epoch   8 | train_loss=0.4918 | val_q3=0.7858 | H=0.845 E=0.695 C=0.784
+[fold 2/5] Epoch   9 | train_loss=0.4851 | val_q3=0.7871 | H=0.860 E=0.714 C=0.760
+[fold 2/5] Epoch  10 | train_loss=0.4740 | val_q3=0.7853 | H=0.811 E=0.681 C=0.826
+[fold 2/5] Epoch  11 | train_loss=0.4590 | val_q3=0.7893 | H=0.827 E=0.701 C=0.808
+[fold 2/5] Epoch  12 | train_loss=0.4534 | val_q3=0.7950 | H=0.819 E=0.690 C=0.838
+[fold 2/5] Epoch  13 | train_loss=0.4379 | val_q3=0.7925 | H=0.876 E=0.722 C=0.753
+[fold 2/5] Epoch  14 | train_loss=0.4267 | val_q3=0.7956 | H=0.837 E=0.716 C=0.804
+[fold 2/5] Epoch  15 | train_loss=0.4102 | val_q3=0.8038 | H=0.828 E=0.702 C=0.844
+[fold 2/5] Epoch  16 | train_loss=0.4043 | val_q3=0.8041 | H=0.847 E=0.678 C=0.841
+[fold 2/5] Epoch  17 | train_loss=0.3959 | val_q3=0.8066 | H=0.857 E=0.716 C=0.813
+[fold 2/5] Epoch  18 | train_loss=0.3843 | val_q3=0.8122 | H=0.832 E=0.721 C=0.851
+[fold 2/5] Epoch  19 | train_loss=0.3705 | val_q3=0.8143 | H=0.858 E=0.710 C=0.836
+[fold 2/5] Epoch  20 | train_loss=0.3601 | val_q3=0.8135 | H=0.856 E=0.742 C=0.816
+[fold 2/5] Epoch  21 | train_loss=0.3545 | val_q3=0.8179 | H=0.859 E=0.755 C=0.816
+[fold 2/5] Epoch  22 | train_loss=0.3466 | val_q3=0.8186 | H=0.862 E=0.737 C=0.826
+[fold 2/5] Epoch  23 | train_loss=0.3355 | val_q3=0.8209 | H=0.856 E=0.755 C=0.827
+[fold 2/5] Epoch  24 | train_loss=0.3316 | val_q3=0.8218 | H=0.870 E=0.766 C=0.809
+[fold 2/5] Epoch  25 | train_loss=0.3246 | val_q3=0.8220 | H=0.872 E=0.760 C=0.811
+[fold 2/5] Epoch  26 | train_loss=0.3243 | val_q3=0.8235 | H=0.870 E=0.750 C=0.823
+[fold 2/5] Epoch  27 | train_loss=0.3191 | val_q3=0.8225 | H=0.866 E=0.761 C=0.818
+[fold 2/5] Epoch  28 | train_loss=0.3230 | val_q3=0.8225 | H=0.870 E=0.755 C=0.817
+[fold 2/5] Epoch  29 | train_loss=0.3226 | val_q3=0.8230 | H=0.869 E=0.754 C=0.820
+[fold 2/5] Epoch  30 | train_loss=0.3208 | val_q3=0.8230 | H=0.870 E=0.753 C=0.820
+
+  → Fold 2 best val Q3 = 0.8235  |  test Q3 = 0.8292
+
+============================================================
+  Fold 3/5  train=190  val=48
+============================================================
+[fold 3/5] Epoch   1 | train_loss=1.0288 | val_q3=0.6226 | H=0.432 E=0.726 C=0.787
+[fold 3/5] Epoch   2 | train_loss=0.7221 | val_q3=0.7493 | H=0.838 E=0.870 C=0.575
+[fold 3/5] Epoch   3 | train_loss=0.6108 | val_q3=0.7855 | H=0.812 E=0.762 C=0.768
+[fold 3/5] Epoch   4 | train_loss=0.5708 | val_q3=0.7964 | H=0.856 E=0.708 C=0.777
+[fold 3/5] Epoch   5 | train_loss=0.5453 | val_q3=0.7985 | H=0.831 E=0.786 C=0.767
+[fold 3/5] Epoch   6 | train_loss=0.5344 | val_q3=0.8039 | H=0.839 E=0.783 C=0.775
+[fold 3/5] Epoch   7 | train_loss=0.5180 | val_q3=0.8044 | H=0.896 E=0.730 C=0.740
+[fold 3/5] Epoch   8 | train_loss=0.5088 | val_q3=0.8111 | H=0.863 E=0.782 C=0.767
+[fold 3/5] Epoch   9 | train_loss=0.4952 | val_q3=0.8106 | H=0.859 E=0.813 C=0.752
+[fold 3/5] Epoch  10 | train_loss=0.4796 | val_q3=0.8107 | H=0.864 E=0.771 C=0.771
+[fold 3/5] Epoch  11 | train_loss=0.4627 | val_q3=0.8151 | H=0.872 E=0.769 C=0.774
+[fold 3/5] Epoch  12 | train_loss=0.4569 | val_q3=0.8190 | H=0.897 E=0.765 C=0.759
+[fold 3/5] Epoch  13 | train_loss=0.4408 | val_q3=0.8190 | H=0.898 E=0.764 C=0.758
+[fold 3/5] Epoch  14 | train_loss=0.4234 | val_q3=0.8200 | H=0.897 E=0.775 C=0.755
+[fold 3/5] Epoch  15 | train_loss=0.4126 | val_q3=0.8261 | H=0.882 E=0.753 C=0.802
+[fold 3/5] Epoch  16 | train_loss=0.3943 | val_q3=0.8237 | H=0.894 E=0.743 C=0.788
+[fold 3/5] Epoch  17 | train_loss=0.3793 | val_q3=0.8291 | H=0.881 E=0.760 C=0.809
+[fold 3/5] Epoch  18 | train_loss=0.3662 | val_q3=0.8286 | H=0.882 E=0.773 C=0.797
+[fold 3/5] Epoch  19 | train_loss=0.3561 | val_q3=0.8328 | H=0.904 E=0.776 C=0.782
+[fold 3/5] Epoch  20 | train_loss=0.3480 | val_q3=0.8336 | H=0.901 E=0.778 C=0.786
+[fold 3/5] Epoch  21 | train_loss=0.3335 | val_q3=0.8321 | H=0.919 E=0.774 C=0.763
+[fold 3/5] Epoch  22 | train_loss=0.3296 | val_q3=0.8355 | H=0.908 E=0.791 C=0.776
+[fold 3/5] Epoch  23 | train_loss=0.3234 | val_q3=0.8357 | H=0.910 E=0.788 C=0.776
+[fold 3/5] Epoch  24 | train_loss=0.3139 | val_q3=0.8375 | H=0.904 E=0.800 C=0.781
+[fold 3/5] Epoch  25 | train_loss=0.3108 | val_q3=0.8393 | H=0.911 E=0.788 C=0.784
+[fold 3/5] Epoch  26 | train_loss=0.3063 | val_q3=0.8404 | H=0.905 E=0.780 C=0.799
+[fold 3/5] Epoch  27 | train_loss=0.3035 | val_q3=0.8401 | H=0.903 E=0.790 C=0.795
+[fold 3/5] Epoch  28 | train_loss=0.3049 | val_q3=0.8391 | H=0.908 E=0.788 C=0.787
+[fold 3/5] Epoch  29 | train_loss=0.3024 | val_q3=0.8399 | H=0.906 E=0.791 C=0.790
+[fold 3/5] Epoch  30 | train_loss=0.3026 | val_q3=0.8401 | H=0.906 E=0.793 C=0.789
+
+  → Fold 3 best val Q3 = 0.8404  |  test Q3 = 0.8171
+
+============================================================
+  Fold 4/5  train=191  val=47
+============================================================
+[fold 4/5] Epoch   1 | train_loss=1.0011 | val_q3=0.6644 | H=0.813 E=0.302 C=0.700
+[fold 4/5] Epoch   2 | train_loss=0.6862 | val_q3=0.7525 | H=0.824 E=0.657 C=0.726
+[fold 4/5] Epoch   3 | train_loss=0.5822 | val_q3=0.7602 | H=0.797 E=0.771 C=0.714
+[fold 4/5] Epoch   4 | train_loss=0.5489 | val_q3=0.7724 | H=0.782 E=0.749 C=0.775
+[fold 4/5] Epoch   5 | train_loss=0.5350 | val_q3=0.7693 | H=0.796 E=0.747 C=0.752
+[fold 4/5] Epoch   6 | train_loss=0.5123 | val_q3=0.7751 | H=0.803 E=0.765 C=0.750
+[fold 4/5] Epoch   7 | train_loss=0.5000 | val_q3=0.7800 | H=0.834 E=0.741 C=0.742
+[fold 4/5] Epoch   8 | train_loss=0.4967 | val_q3=0.7802 | H=0.823 E=0.712 C=0.770
+[fold 4/5] Epoch   9 | train_loss=0.4788 | val_q3=0.7851 | H=0.811 E=0.728 C=0.787
+[fold 4/5] Epoch  10 | train_loss=0.4695 | val_q3=0.7754 | H=0.850 E=0.749 C=0.709
+[fold 4/5] Epoch  11 | train_loss=0.4575 | val_q3=0.7802 | H=0.828 E=0.777 C=0.730
+[fold 4/5] Epoch  12 | train_loss=0.4398 | val_q3=0.7839 | H=0.841 E=0.749 C=0.740
+[fold 4/5] Epoch  13 | train_loss=0.4250 | val_q3=0.7827 | H=0.857 E=0.673 C=0.761
+[fold 4/5] Epoch  14 | train_loss=0.4163 | val_q3=0.7908 | H=0.802 E=0.734 C=0.810
+[fold 4/5] Epoch  15 | train_loss=0.4099 | val_q3=0.7891 | H=0.820 E=0.674 C=0.818
+[fold 4/5] Epoch  16 | train_loss=0.3895 | val_q3=0.7913 | H=0.853 E=0.720 C=0.763
+[fold 4/5] Epoch  17 | train_loss=0.3812 | val_q3=0.7919 | H=0.845 E=0.727 C=0.769
+[fold 4/5] Epoch  18 | train_loss=0.3642 | val_q3=0.7952 | H=0.848 E=0.698 C=0.790
+[fold 4/5] Epoch  19 | train_loss=0.3546 | val_q3=0.7981 | H=0.859 E=0.736 C=0.765
+[fold 4/5] Epoch  20 | train_loss=0.3468 | val_q3=0.7960 | H=0.863 E=0.737 C=0.755
+[fold 4/5] Epoch  21 | train_loss=0.3389 | val_q3=0.8006 | H=0.844 E=0.761 C=0.775
+[fold 4/5] Epoch  22 | train_loss=0.3271 | val_q3=0.8030 | H=0.846 E=0.747 C=0.787
+[fold 4/5] Epoch  23 | train_loss=0.3169 | val_q3=0.8010 | H=0.846 E=0.754 C=0.777
+[fold 4/5] Epoch  24 | train_loss=0.3114 | val_q3=0.8006 | H=0.865 E=0.732 C=0.767
+[fold 4/5] Epoch  25 | train_loss=0.3119 | val_q3=0.8019 | H=0.861 E=0.747 C=0.768
+[fold 4/5] Epoch  26 | train_loss=0.3074 | val_q3=0.8013 | H=0.852 E=0.744 C=0.778
+[fold 4/5] Epoch  27 | train_loss=0.3078 | val_q3=0.8044 | H=0.855 E=0.750 C=0.778
+[fold 4/5] Epoch  28 | train_loss=0.3017 | val_q3=0.8014 | H=0.857 E=0.744 C=0.772
+[fold 4/5] Epoch  29 | train_loss=0.3047 | val_q3=0.8031 | H=0.856 E=0.747 C=0.776
+[fold 4/5] Epoch  30 | train_loss=0.3022 | val_q3=0.8029 | H=0.855 E=0.749 C=0.775
+
+  → Fold 4 best val Q3 = 0.8044  |  test Q3 = 0.8226
+
+============================================================
+  Fold 5/5  train=191  val=47
+============================================================
+[fold 5/5] Epoch   1 | train_loss=1.0286 | val_q3=0.5895 | H=0.568 E=0.107 C=0.914
+[fold 5/5] Epoch   2 | train_loss=0.7198 | val_q3=0.7313 | H=0.714 E=0.558 C=0.857
+[fold 5/5] Epoch   3 | train_loss=0.5939 | val_q3=0.7622 | H=0.860 E=0.697 C=0.707
+[fold 5/5] Epoch   4 | train_loss=0.5455 | val_q3=0.7685 | H=0.793 E=0.753 C=0.754
+[fold 5/5] Epoch   5 | train_loss=0.5317 | val_q3=0.7762 | H=0.802 E=0.717 C=0.788
+[fold 5/5] Epoch   6 | train_loss=0.5157 | val_q3=0.7781 | H=0.843 E=0.706 C=0.760
+[fold 5/5] Epoch   7 | train_loss=0.5067 | val_q3=0.7841 | H=0.824 E=0.735 C=0.775
+[fold 5/5] Epoch   8 | train_loss=0.4908 | val_q3=0.7786 | H=0.782 E=0.703 C=0.823
+[fold 5/5] Epoch   9 | train_loss=0.4862 | val_q3=0.7859 | H=0.820 E=0.683 C=0.817
+[fold 5/5] Epoch  10 | train_loss=0.4672 | val_q3=0.7816 | H=0.827 E=0.669 C=0.808
+[fold 5/5] Epoch  11 | train_loss=0.4604 | val_q3=0.7864 | H=0.802 E=0.723 C=0.812
+[fold 5/5] Epoch  12 | train_loss=0.4343 | val_q3=0.7882 | H=0.817 E=0.732 C=0.795
+[fold 5/5] Epoch  13 | train_loss=0.4339 | val_q3=0.7934 | H=0.820 E=0.726 C=0.810
+[fold 5/5] Epoch  14 | train_loss=0.4194 | val_q3=0.7952 | H=0.845 E=0.683 C=0.816
+[fold 5/5] Epoch  15 | train_loss=0.3990 | val_q3=0.7969 | H=0.824 E=0.721 C=0.818
+[fold 5/5] Epoch  16 | train_loss=0.3877 | val_q3=0.8054 | H=0.843 E=0.728 C=0.818
+[fold 5/5] Epoch  17 | train_loss=0.3726 | val_q3=0.8091 | H=0.858 E=0.730 C=0.811
+[fold 5/5] Epoch  18 | train_loss=0.3577 | val_q3=0.8121 | H=0.845 E=0.744 C=0.823
+[fold 5/5] Epoch  19 | train_loss=0.3464 | val_q3=0.8131 | H=0.854 E=0.756 C=0.809
+[fold 5/5] Epoch  20 | train_loss=0.3386 | val_q3=0.8142 | H=0.845 E=0.761 C=0.817
+[fold 5/5] Epoch  21 | train_loss=0.3285 | val_q3=0.8180 | H=0.845 E=0.749 C=0.835
+[fold 5/5] Epoch  22 | train_loss=0.3162 | val_q3=0.8177 | H=0.859 E=0.753 C=0.818
+[fold 5/5] Epoch  23 | train_loss=0.3102 | val_q3=0.8190 | H=0.857 E=0.755 C=0.822
+[fold 5/5] Epoch  24 | train_loss=0.3055 | val_q3=0.8193 | H=0.861 E=0.753 C=0.820
+[fold 5/5] Epoch  25 | train_loss=0.3024 | val_q3=0.8206 | H=0.867 E=0.755 C=0.817
+[fold 5/5] Epoch  26 | train_loss=0.2943 | val_q3=0.8204 | H=0.860 E=0.761 C=0.819
+[fold 5/5] Epoch  27 | train_loss=0.2997 | val_q3=0.8197 | H=0.859 E=0.759 C=0.819
+[fold 5/5] Epoch  28 | train_loss=0.2955 | val_q3=0.8204 | H=0.863 E=0.762 C=0.816
+[fold 5/5] Epoch  29 | train_loss=0.2925 | val_q3=0.8202 | H=0.861 E=0.758 C=0.820
+[fold 5/5] Epoch  30 | train_loss=0.2959 | val_q3=0.8200 | H=0.862 E=0.758 C=0.818
+
+  → Fold 5 best val Q3 = 0.8206  |  test Q3 = 0.8237
+
+============================================================
+Cross-validation summary (5 folds)
+============================================================
+  Val  Q3 : 0.8212 ± 0.0116  (per fold: 0.8172, 0.8235, 0.8404, 0.8044, 0.8206)
+  Test Q3 : 0.8193 ± 0.0087  (per fold: 0.8038, 0.8292, 0.8171, 0.8226, 0.8237)
+
+  H: avg test precision=0.896  avg test recall=0.867
+  E: avg test precision=0.755  avg test recall=0.761
+  C: avg test precision=0.770  avg test recall=0.795
